@@ -194,7 +194,7 @@ def do_stuff(folder_name):
 
         bytes_from_the_back = [ (0xAE0 - 0x830), (0xAE0 - 0x890), (0xAE0 - 0x8F0), (0xAE0 - 0x950), (0xAE0 - 0x9B0), (0xAE0 - 0xA10)]
         for one_byte in bytes_from_the_back:
-            if folder_name == boss_folder:
+            if folder_name == boss_folder or "sanctuary" in asset_name:
                 one_byte -= 8
             base_byte = base_bytes[len(base_bytes) - one_byte] + (base_bytes[len(base_bytes) - one_byte + 1] << 8) + (base_bytes[len(base_bytes) - one_byte + 2] << 16) + (base_bytes[len(base_bytes) - one_byte + 3] << 24)
             base_byte += chunk_difference
